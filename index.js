@@ -39,10 +39,10 @@ app.post('/user',(req,res) => {
         session=req.session;
         session.userid=req.body.username;
         console.log(req.session);
-        res.send("hello Walcome<a> hraf=\'/logout'>click to logout</a>");
+        res.sendFile('model/main.html',{root:__dirname});
     }
     else{
-        res.send('Invalib username or password');
+        res.sendFile('views/login.html',{root:__dirname});
     }
 });
 
