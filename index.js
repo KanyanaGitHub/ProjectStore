@@ -46,6 +46,16 @@ app.post('/user',(req,res) => {
     }
 });
 
+/*app.get('/regigter',(req,res) => {
+    session = req.session;
+    if(session.register){
+        res.sendFile('views/register.html',{root:__dirname});
+    }
+    else{
+        res.sendFile('views/login.html',{root:__dirname});
+    }
+});*/
+
 app.get('/logout',(req,res)=>{
     req.session.destroy();
     res.redirect('/');
