@@ -1,7 +1,46 @@
 <!DOCTYPE html>
-<html lang="en"></html>
 <html>
-    <body>
-        <h1>ยืม - คืน อุปกรณ์</h1>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>ยืม-คืนอุปกรณ์</title>
+  </head>
+
+  <body>
+    <h1> Item</h1>
+	<p>Select Item :</p>
+    <form action="/item" method="get">
+	<div class="equipment">
+		<div class="block">
+			<h2>multimeter</h2>
+			<p>quantity: 10</p>
+			<input type="number" id="multimeter" name="multimeter" min="0" max="10" value="0">
+		</div>
+		<div class="block">
+			<h2>power supply</h2>
+			<p>quantity: 10</p>
+			<input type="number" id="power_supply" name="power_supply" min="0" max="10" value="0">
+		</div>
+        <div class="block">
+			<h2>soldering iron</h2>
+			<p>quantity: 10</p>
+			<input type="number" id="soldering_iron" name="soldering_iron" min="0" max="10" value="0">
+		</div>
+        <div class="block">
+			<h2>oscilloscope</h2>
+			<p>quantity: 5</p>
+			<input type="number" id="oscilloscope" name="oscilloscope" min="0" max="10" value="0">
+		</div>
+        <div class="block">
+			<h2>function generator</h2>
+			<p>quantity: 10</p>
+			<input type="number" id="function_generator" name="function_generator" min="0" max="10" value="0">
+		</div>
+	</div>
+	<button type="submit" >enter</button>
+	<div id="message"></div>
+  </form>
+	<script>
+	</script>
+
+  </body>
 </html>

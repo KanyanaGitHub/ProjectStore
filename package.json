@@ -13,6 +13,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongoose": "^7.0.1",
-    "mongose": "^0.0.2-security"
+    "mongose": "^0.0.2-security",
+    "sqlite3": "^5.1.4"
   }
 }

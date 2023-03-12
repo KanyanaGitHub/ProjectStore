@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register</title>
+</head>
+<body>
+   <header>
+     <h1>register</h1>
+   </header>
+   <main>
+     <form action="/user/create" method="post">
+       <label for="username">Username:</label>
+       <input type="text" name="username" id="username" placeholder="Enter your ID" required>
+       <label for="password">Password:</label>
+       <input type="password" name="password" id="password" placeholder="Enter your password" required>
+       <button type="submit">Enter</button>
+     </form>
+   </main>
+   <footer>
+     <button class="logout" onclick="location.href='/logout'">Logout</button>
+     <button class="back" onclick="location.href='/setting_users'">Back</button>
+   </footer>
+</body>
+</html>

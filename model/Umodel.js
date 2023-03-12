@@ -13,9 +13,9 @@ db.on('error', (err) => {
 });
 
 const userSchema = new mongoose.Schema({
-    ID: {type: String, required: true},
+    user: {type: String, required: true},
     password: {type: String, required: true},
-    yourItem: { type: Object, default: {} }
+    itemNum: { type: Object, default: {} }
 });
 
 module.exports = mongoose.model('user',userSchema)

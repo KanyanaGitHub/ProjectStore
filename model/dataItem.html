@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+  </head>
+  <body>
+    <a href="main.html">
+      <button>Home</button>
+    </a>
+    <div class="block-container"></div>
+
+    <script>
+
+      fetch('/show')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.querySelector('.block-container');
+          data.forEach(item => {
+            const block = document.createElement('div');
+            block.classList.add('block');
+            block.innerHTML = `
+              <div>name: ${item.first_name} ${item.last_name}</div>
+              <div>faculty: ${item.faculty}</div>
+              <div>personal id: ${item.personal_id}</div>
+              <div>--------------------------------------</div>
+              <div>oscilloscope: ${item.multimeter} เครื่อง</div>
+              <div>power supply: ${item.power_supply} เครื่อง</div>
+              <div>soldering iron: ${item.soldering_iron} เครื่อง</div>
+              <div>digital meter: ${item.oscilloscope} เครื่อง </div>
+              <div>breadboard: ${item.function_generator} เครื่อง </div>
+              <button class="delete-button" data-id="${item.id}" onclick="deletedata(${item.id})">Delete</button>
+            `;
+            container.appendChild(block);
+          });
+        });
+      function deletedata(id) {
+  fetch('/delete', {
+    method: 'DELETE',
+    body: JSON.stringify({id:id}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+
+    const block = document.querySelector(`.block [data-id="${id}"]`).parentNode;
+    block.parentNode.removeChild(block);
+  })
+  .catch(err => console.error(err));
+}
+
+    </script>
+  </body>
+</html>
